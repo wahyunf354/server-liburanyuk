@@ -43,7 +43,8 @@
                   <td><%= activities[i].name %> </td>
                   <td><%= activities[i].type %> </td>
                   <td>
-                    <img src="http://localhost:3000/<%= activities[i].imageUrl %>" alt="image" height="70px">
+                    <img src="https://admin-liburanyuk.herokuapp.com/<%= activities[i].imageUrl %>" alt="image"
+                      height="70px">
                   </td>
                   <td>
                     <form action="/admin/item/<%= itemId %>/activity/<%= activities[i].id %>?_method=DELETE"

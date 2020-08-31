@@ -42,7 +42,8 @@
                   <td><%= features[i].name %> </td>
                   <td><%= features[i].qty %> </td>
                   <td>
-                    <img src="http://localhost:3000/<%= features[i].imageUrl %>" alt="image" height="70px">
+                    <img src="https://admin-liburanyuk.herokuapp.com/<%= features[i].imageUrl %>" alt="image"
+                      height="70px">
                   </td>
                   <td>
                     <form action="/admin/item/<%= itemId %>/feature/<%= features[i].id %>?_method=DELETE" method="POST">
