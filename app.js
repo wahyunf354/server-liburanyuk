@@ -13,12 +13,15 @@ const flash = require("connect-flash");
 const session = require("express-session");
 // Import mongoose
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/db_liburanyuk", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false,
-});
+mongoose.connect(
+  "mongodb+srv://wahyu:liburanyuk@cluster0.tnbx4.mongodb.net/db_liburanyuk?retryWrites=true&w=majority",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+  }
+);
 
 var app = express();
 
