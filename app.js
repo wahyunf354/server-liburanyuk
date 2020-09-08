@@ -11,6 +11,7 @@ const apiRouter = require("./routes/api");
 const methodOverride = require("method-override");
 const flash = require("connect-flash");
 const session = require("express-session");
+const cors = require("cors");
 // Import mongoose
 const mongoose = require("mongoose");
 mongoose.connect(
@@ -29,6 +30,7 @@ var app = express();
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
+app.use(cors());
 app.use(methodOverride("_method"));
 app.use(flash());
 app.use(
