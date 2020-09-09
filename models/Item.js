@@ -34,10 +34,6 @@ const itemSchema = new mongoose.Schema({
     type: String,
     default: "night",
   },
-  unit: {
-    type: String,
-    required: true,
-  },
   imageId: [
     {
       type: ObjectId,
