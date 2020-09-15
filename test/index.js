@@ -53,6 +53,8 @@ describe("API ENDPOINT TEST", () => {
         expect(res.body.imageId).to.be.an("array");
         expect(res.body).to.have.property("featureId");
         expect(res.body.featureId).to.be.an("array");
+        expect(res.body.featureId[0]).to.be.an("Object");
+        expect(res.body.featureId[0]).to.have.property("imageUrl");
         expect(res.body).to.have.property("activityId");
         expect(res.body.activityId).to.be.an("array");
         expect(res.body).to.have.property("_id");

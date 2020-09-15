@@ -264,7 +264,7 @@ module.exports = {
           country,
         };
         const item = await Item.create(newItem);
-        category.itemIed.push({ _id: item._id });
+        category.itemId.push({ _id: item._id });
         await category.save();
         for (let i = 0; i < req.files.length; i++) {
           const imageSave = await Image.create({
