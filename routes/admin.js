@@ -27,12 +27,12 @@ router.put("/item/:id", uploadMultiple, adminController.editItem);
 router.delete("/item/:id", adminController.deleteItem);
 // endpoint detail
 router.get("/item/show-detail-item/:itemId", adminController.showItemDetails);
-router.post("/item/feature", upload, adminController.addFeature);
-router.put("/item/edit/feature", upload, adminController.editFeature);
+router.post("/item/feature", uploadMultiple, adminController.addFeature);
+router.put("/item/edit/feature", uploadMultiple, adminController.editFeature);
 router.delete("/item/:itemId/feature/:id", adminController.deleteFeature);
 
-router.post("/item/add/activity", upload, adminController.addActivity);
-router.put("/item/edit/activity", upload, adminController.editActivity);
+router.post("/item/add/activity", uploadMultiple, adminController.addActivity);
+router.put("/item/edit/activity", uploadMultiple, adminController.editActivity);
 router.delete("/item/:itemId/activity/:id", adminController.deleteActivity);
 
 router.get("/booking", adminController.viewBooking);
