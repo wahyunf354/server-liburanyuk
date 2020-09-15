@@ -264,7 +264,7 @@ module.exports = {
           country,
         };
         const item = await Item.create(newItem);
-        category.itemId.push({ _id: item._id });
+        category.itemIed.push({ _id: item._id });
         await category.save();
         for (let i = 0; i < req.files.length; i++) {
           const imageSave = await Image.create({
@@ -517,7 +517,7 @@ module.exports = {
 
   addActivity: async (req, res) => {
     const { name, type, itemId } = req.body;
-    console.log(itemId);
+    console.log(req.file);
     try {
       if (!req.file) {
         req.flash("alertMessage", "Image Not Found");
