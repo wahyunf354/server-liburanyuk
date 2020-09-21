@@ -438,7 +438,7 @@ module.exports = {
   addFeature: async (req, res) => {
     const { name, qty, itemId } = req.body;
     try {
-      if (!req.files[0]) {
+      if (!req.file) {
         req.flash("alertMessage", "Image Not Found");
         req.flash("alertStatus", "danger");
         res.redirect(`/admin/item/show-detail-item/${itemId}`);
@@ -447,7 +447,7 @@ module.exports = {
         name,
         qty,
         itemId,
-        imageUrl: `images/${req.files[0].filename}`,
+        imageUrl: `images/${req.file.filename}`,
       });
       const item = await Item.findOne({ _id: itemId });
       item.featureId.push({ _id: feature._id });

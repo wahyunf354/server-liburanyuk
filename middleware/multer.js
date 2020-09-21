@@ -11,7 +11,17 @@ const storageMultiple = multer.diskStorage({
     }
     cb(null, dir);
   },
-  filename: (req, file, cb) => {
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + path.extname(file.originalname));
+  },
+});
+
+// Set storage engine
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "public/images");
+  },
+  filename: function (req, file, cb) {
     cb(null, Date.now() + path.extname(file.originalname));
   },
 });
@@ -23,14 +33,6 @@ const uploadMultiple = multer({
     checkFileType(file, cb);
   },
 }).array("image", 12);
-
-// Set storage engine
-const storage = multer.diskStorage({
-  destination: "public/images",
-  filename: function (req, file, cb) {
-    cb(null, Date.now() + path.extname(file.originalname));
-  },
-});
 
 const upload = multer({
   storage: storage,
