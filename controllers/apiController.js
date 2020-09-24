@@ -113,7 +113,7 @@ module.exports = {
       email,
       phoneNumber,
       accountHolder,
-      bankFrom,
+      bankFrom,	
     } = req.body;
 
     if (!req.file) {
@@ -130,7 +130,7 @@ module.exports = {
       email === undefined ||
       phoneNumber === undefined ||
       accountHolder === undefined ||
-      bankFrom === undefined
+      bankFrom === undefined ||
     ) {
       res.status(404).json({ message: "Lengkapi Field" });
     }

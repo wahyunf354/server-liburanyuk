@@ -25,7 +25,7 @@
               <%= booking[i].bookingEndDate.toLocaleString().split(',')[0] %> </td>
             <td><%= booking[i].itemId.title %> </td>
             <td><%= booking[i].memberId.firstName %> <%= booking[i].memberId.lastName %></td>
-            <td><%= booking[i].bankId.nameBank %> </td>
+            <td><%= booking[i].payments.bankFrom %> </td>
             <td><%= booking[i].payments.status %> </td>
             <td>
               <a href="/admin/booking/<%= booking[i]._id %> " type="button"
