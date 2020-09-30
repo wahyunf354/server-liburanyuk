@@ -199,7 +199,7 @@ module.exports = {
         bank.nomorRekening = nomorRekening;
         bank.image = `images/${req.file.filename}`;
         await bank.save();
-        req.flash("alertMessage", "Success Update Bank");
+          req.flash("alertMessage", "Success Update Bank");
         req.flash("alertStatus", "success");
         res.redirect("/admin/bank");
       }
