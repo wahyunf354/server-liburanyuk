@@ -15,7 +15,7 @@ const cors = require("cors");
 // Import mongoose
 const mongoose = require("mongoose");
 mongoose.connect(
-  "mongodb://wahyu:liburanyuk@cluster0-shard-00-00.tnbx4.mongodb.net:27017,cluster0-shard-00-01.tnbx4.mongodb.net:27017,cluster0-shard-00-02.tnbx4.mongodb.net:27017/db_liburanyuk?ssl=true&replicaSet=atlas-yelf3o-shard-0&authSource=admin&retryWrites=true&w=majority ",
+  "mongodb://wahyu:liburanyuk@cluster0-shard-00-00.tnbx4.mongodb.net:27017,cluster0-shard-00-01.tnbx4.mongodb.net:27017,cluster0-shard-00-02.tnbx4.mongodb.net:27017/db_liburanyuk?ssl=true&replicaSet=atlas-yelf3o-shard-0&authSource=admin&retryWrites=true&w=majority",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
