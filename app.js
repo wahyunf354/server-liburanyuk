@@ -24,9 +24,9 @@ mongoose.connect(
   }
 );
 const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  console.log("db Connect")
+db.on("error", console.error.bind(console, "connection error:"));
+db.once("open", function () {
+  console.log("db Connect");
 });
 
 var app = express();
@@ -36,6 +36,7 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 app.use(cors());
+app;
 app.use(methodOverride("_method"));
 app.use(flash());
 app.use(
@@ -61,6 +62,14 @@ app.use("/users", usersRouter);
 // router end point me
 app.use("/admin", adminRouter);
 app.use("/api/v1/member", apiRouter);
+
+//CORS
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methoods", "GET, POST, PUT, DELETE");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  next();
+});
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
