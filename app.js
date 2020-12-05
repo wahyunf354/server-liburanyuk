@@ -36,7 +36,7 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 app.use(cors({
-  origin: "*",
+  origin: "https://liburanyuk.vercel.app",
   methods: ['GET', 'PUT', 'POST']
 }));
 app;
@@ -68,7 +68,7 @@ app.use("/api/v1/member", apiRouter);
 
 //CORS
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Origin", "https://liburanyuk.vercel.app");
   res.setHeader("Access-Control-Allow-Methoods", "GET, POST, PUT, DELETE");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
   next();
